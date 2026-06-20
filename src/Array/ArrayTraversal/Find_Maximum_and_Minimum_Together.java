@@ -2,13 +2,14 @@ package Array.ArrayTraversal;
 
 import java.util.Scanner;
 
-public class Array_is_Sorted {
+public class Find_Maximum_and_Minimum_Together {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the size of array:");
         int n = sc.nextInt();
+
+
 
         int arr[] = new int[n];
 
@@ -16,21 +17,21 @@ public class Array_is_Sorted {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        int max =arr[0];
+        int min =arr[0];
 
-        boolean sorted = true;
-
-        for (int i = 0; i < arr.length - 1; i++) {
-
-            if (arr[i] > arr[i + 1]) {
-                sorted = false;
-                break;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] >max){
+                max = arr[i];
+            }  if (arr[i] < min) {
+                min = arr[i];
             }
         }
+        System.out.println(max);
+        System.out.println(min);
 
-        if (sorted) {
-            System.out.println("Array is Sorted");
-        } else {
-            System.out.println("Array is Not Sorted");
-        }
+
+
+
     }
 }
