@@ -2,9 +2,8 @@ package Array.ArrayManipulation;
 
 import java.util.Scanner;
 
-public class Move_All_Zeroes_to_End {
+public class Right_Rotate_Array_by_One_Place {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the size of Array");
@@ -16,25 +15,14 @@ public class Move_All_Zeroes_to_End {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        int temp = arr[n-1];
 
-        int index = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-
-            if (arr[i] != 0) {
-
-                int temp = arr[i];
-                arr[i] = arr[index];
-                arr[index] = temp;
-
-                index++;
-            }
+        for (int i = arr.length-1; i >0; i++) {
+            arr[i] = arr[i-1];
         }
-
-        System.out.println("Array after moving zeroes:");
-
+        arr[arr.length - 1] = temp;
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.println(arr[i]);
         }
     }
 }
