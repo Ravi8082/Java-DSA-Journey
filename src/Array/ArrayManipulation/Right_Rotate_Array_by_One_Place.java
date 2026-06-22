@@ -17,10 +17,11 @@ public class Right_Rotate_Array_by_One_Place {
         }
         int temp = arr[n-1];
 
-        for (int i = arr.length-1; i >0; i++) {
+        for (int i = arr.length-1; i >0; i--) {
             arr[i] = arr[i-1];
+
         }
-        arr[arr.length - 1] = temp;
+        arr[0] = temp;
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }

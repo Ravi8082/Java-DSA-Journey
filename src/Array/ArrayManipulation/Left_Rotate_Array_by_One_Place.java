@@ -15,8 +15,8 @@ public class Left_Rotate_Array_by_One_Place {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        int index=0;
         int temp = arr[0];
+
         for (int i = 0; i < arr.length-1; i++) {
 
             arr[i] = arr[i+1];
