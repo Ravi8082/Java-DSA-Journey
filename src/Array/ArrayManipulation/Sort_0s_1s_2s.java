@@ -2,7 +2,7 @@ package Array.ArrayManipulation;
 
 import java.util.Scanner;
 
-public class Left_Rotate_by_K_Places {
+public class Sort_0s_1s_2s {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -17,25 +17,21 @@ public class Left_Rotate_by_K_Places {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println("Enter the K value:");
-        int k = sc.nextInt();
+        for (int j = 0; j < arr.length - 1; j++) {
 
-        // Important optimization
-        k = k % n;
+            for (int i = j + 1; i < arr.length; i++) {
 
-        // Left Rotate by One, k times
-        for (int j = 0; j < k; j++) {
+                if (arr[j] > arr[i]) {
 
-            int temp = arr[0];
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
 
-            for (int i = 0; i < arr.length - 1; i++) {
-                arr[i] = arr[i + 1];
+                }
             }
-
-            arr[arr.length - 1] = temp;
         }
 
-        System.out.println("Array after Left Rotation:");
+        System.out.println("Sorted Array:");
 
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
